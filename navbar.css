@@ -1,0 +1,70 @@
+.bottom-nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center; /* Aligns children vertically in the center */
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background: #100124a1;
+    padding: 5px 0; /* Reduced padding to decrease height */
+    z-index: 1000;
+    font-family: 'Poppins', sans-serif;
+    box-shadow: 0 -1px 10px rgba(0, 0.1, 0.2, 0.3);
+    height: 60px; /* Fixed height for the navbar */
+}
+
+.nav-item {
+    text-align: center;
+    padding: 10px 5px;
+    text-decoration: none;
+    color: #00ffb380;
+    position: relative;
+    transition: transform 0.3s ease;
+}
+
+.nav-item i {
+    display: block;
+    font-size: 45px;
+    margin-bottom: 5px;
+}
+
+.nav-item span {
+    display: block;
+    font-size: 20px;
+}
+
+.nav-item.active, .nav-item:hover {
+    transform: translateY(-5px);
+    font-weight: 750;
+    color: #00ffb3;;
+}
+
+.nav-item.active::after, .nav-item:hover::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 50%;
+    height: 2px;
+    font-weight: 750;
+    background-color: #00ffb3; /* Bootstrap primary color for active state */
+    transform: translateX(-50%);
+    transition: width 0.3s;
+}
+.indicator {
+    height: 2px;
+    background-color: transparent; /* Color of the indicator */
+    position: absolute;
+    bottom: 0;
+    transition: all 0.3s ease;
+}
+
+
+@media (max-width: 768px) {
+    .nav-item i {
+        font-size: 20px;
+    }
+    .nav-item span {
+        font-size: 12px;
+    }
+}

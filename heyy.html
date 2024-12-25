@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Study Buddy</title>
+    <link rel="shortcut icon" href="favicon.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <link rel="stylesheet" href="copysignup.css">
+    <link rel="stylesheet" href="navbar.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style> 
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            min-height: 100vh;
+            padding: 50px 20px;
+        }
+
+        /* Container styles for scrolling cards */
+        .cards-container {
+            width: 100%;
+            max-width: 600px; /* Limit the width for a centered look */
+            margin: 20px auto; /* Centered horizontally */
+        }
+
+        /* Card styles */
+        .rounded-box {
+            background: #1b00437c; /* White background */
+            border-radius: 20px; /* Rounded corners */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+            overflow: hidden; /* Ensures the image is part of the rounded box */
+            width: 100%; /* Full width */
+            text-align: center;
+            margin-bottom: 20px; /* Space between cards */
+        }
+
+        /* Image styles */
+        .rounded-box img {
+            width: 100%; /* Full width image */
+            display: block; /* Removes gaps below the image */
+        }
+
+        .rounded-box p {
+            font-size: 0.9rem;
+            color: #ffffff; /* Medium gray text */
+            margin: 0 15px 15px;
+        }
+
+        /* Button styles */
+        .rounded-box .button {
+            background-color: #00ffb3; /* Blue button */
+            color: #000000;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 10px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            cursor: pointer;
+            display: inline-block;
+            transition: background-color 0.3s ease;
+            margin-bottom: 15px;
+        }
+
+        .rounded-box .button:hover {
+            background-color: #00e09d; /* Darker blue on hover */
+        }
+
+
+    </style>
+</head>
+<body>
+    <!-- Cards Container -->
+    <div class="cards-container">
+        <!-- Card 1 -->
+        <div class="rounded-box">
+            <img src="20241225_155256copy.png" alt="Illustration 1">
+            <p>Find and join a study group that suits you!</p>
+            <a href="#" class="button" style="font-family: 'Poppins Rounded Rounded';">Join Now</a>
+        </div>
+        <!-- Card 2 -->
+        <div class="rounded-box">
+            <img src="20241225_155256copy.png" alt="Illustration 2">
+            <p>Create your own study group and invite friends to learn together!</p>
+            <a href="#" class="button" style="font-family: 'Poppins Rounded Rounded';">Create Group</a>
+        </div>
+        <!-- Card 3 -->
+        <div class="rounded-box">
+            <img src="20241225_155256copy.png" alt="Illustration 3">
+            <p>Explore a variety of resources tailored to your study needs.</p>
+            <a href="#" class="button" style="font-family: 'Poppins Rounded Rounded';">Explore</a>
+        </div>
+    </div>
+
+    <div class="bottom-nav">
+        <a href="home.html" class="nav-item">
+          <i class="fa-solid fa-house"></i>
+          <span>Home</span>
+        </a>
+        <a href="here.html" class="nav-item">
+          <i class="fa-solid fa-users"></i>
+          <span>Groups</span>
+        </a>
+        <a href="heyy.html" class="nav-item active">
+          <i class="fa-solid fa-comments"></i>
+          <span>Discussions</span>
+        </a>
+        <a href="#tasks" class="nav-item">
+          <i class="fa-solid fa-calendar-check"></i>
+          <span>Tasks</span>
+        </a>
+        <a href="#account" class="nav-item">
+          <i class="fa-solid fa-user"></i>
+          <span>Account</span>
+        </a>
+    </div>
+      
+        
+<script src="navbar.js"></script>
+  
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Studdy Buddy Signup</title>
+    <link rel="shortcut icon" href="favicon.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <link rel="stylesheet" href="copysignup.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+</head>
+<body>
+    <div class="site-wrap d-md-flex align-items-stretch" style="background-color: black;">
+        <div class="form-wrap">
+            <div class="form-inner">
+                <h4 class="title" style="text-align: center;">Create an account <span class="today">today!</span></h4>
+                <!--<h5><p class="caption mb-4" style="color: black;">Create an account</p></h5>-->                   
+                    <div class="form-floating">
+                         <input type="text" class="form-control" id="name" placeholder="Fullname" required>
+                         <label for="fullname" style="font-family: Poppins, sans-serif;">Full name</label>
+                    </div>
+                    <div class="form-floating">
+                        <input type="email" class="form-control" id="email" name="email" placeholder="info@example.com" required>
+                        <label for="email" style="font-family: Poppins, sans-serif;">Email Address</label>
+                    </div>
+                    <div class="form-floating">
+                        <input type="password" class="form-control" id="password" name="password" placeholder="Password" required>
+                        <label for="password" style="font-family: Poppins, sans-serif;">Password</label>
+                        <span id="password-show-toggle" class="password-show-toggle" onclick="togglepassword('password', 'password-show-toggle')">Show</span>
+                    </div>
+                    <div class="form-floating">
+                        <input type="password" class="form-control" id="conpassword" name="confirm_password" placeholder="Confirm password" required>
+                        <label for="confirm_password" style="font-family: Poppins, sans-serif;">Confirm Password</label>
+                        <span id="conpassword-show-toggle" class="conpassword-show-toggle" onclick="togglepassword('conpassword', 'conpassword-show-toggle')">Show</span>
+                    </div>
+                    <div class="d-flex justify-content-between">
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input" id="agree" name="agree" required>
+                            <label for="agree" class="form-check-label" style="font-family: 'Poppins Rounded Rounded';">I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a></label>
+                        </div>
+                    </div>
+                    <div class="d-grid mb-4">
+                        <button type="submit" class="btn btn-primary" style="font-family: 'Poppins Rounded Rounded';">Sign up</button>
+                    </div>
+                    <div class="mb-2" style="font-weight: 320;">Already a member? <a href="login.php" style="font-family: 'Poppins Rounded Rounded';">Log in</a></div>
+                    <strong>&nbsp;</strong>
+                    <strong>&nbsp;</strong>
+
+                </form>
+                                    <strong>&nbsp;</strong>
+                    <strong>&nbsp;</strong>
+                    <strong>&nbsp;</strong>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script src="here.js"></script>
+    <script src="payment.js"></script>
+    <script src="https://js.paystack.co/v1/inline.js"></script> 
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+</body>
+</html>

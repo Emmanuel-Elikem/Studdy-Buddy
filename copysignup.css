@@ -1,0 +1,187 @@
+
+/* ===== Google Font Import - Poppins ===== */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap');
+
+@font-face {
+  font-family: 'Poppins Rounded Rounded';
+  src: url('fonts/PoppinsRounded-Rounded.ttf');
+}
+
+body {
+  background-color: #100124;
+  font-family: 'Poppins', sans-serif;
+  color: rgb(246, 255, 246);
+  font-size: 15px;
+}
+
+a {
+  -webkit-transition: .3s all ease;
+  transition: .3s all ease;
+  color: #00ffb3;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #00ffb3;
+}
+
+.bg-img,
+.form-wrap {
+  height: 100vh;
+  min-height: 500px;
+}
+
+.bg-img {
+  left: 0;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  width: 100%;
+  position: relative;
+  height: 200px;
+  min-height: 200px;
+  z-index: 2;
+}
+
+@media (min-width: 768px) {
+  .bg-img {
+    position: fixed;
+    width: 50%;
+    height: 100vh;
+  }
+}
+
+@media (min-width: 992px) {
+  .bg-img {
+    position: fixed;
+    width: 50%;
+    height: 100vh;
+  }
+}
+
+@media (min-width: 1200px) {
+  .bg-img {
+    position: fixed;
+    width: 60%;
+    height: 100vh;
+  }
+}
+
+.form-wrap {
+  right: 0;
+  position: relative;
+  z-index: 1;
+  padding: 5%;
+  width: 100%;
+  background: #100124;
+  height: 100%;
+}
+
+@media (min-width: 768px) {
+  .form-wrap {
+    position: absolute;
+    width: 50%;
+  }
+}
+
+@media (min-width: 992px) {
+  .form-wrap {
+    position: absolute;
+    width: 50%;
+  }
+}
+
+@media (min-width: 1200px) {
+  .form-wrap {
+    position: absolute;
+    width: 40%;
+  }
+}
+
+.form-wrap .title {
+  font-size: 25px;
+  color: rgb(240, 255, 240);
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
+  filter: blur(0.2px);
+  font-family: 'Poppins Rounded Rounded';
+}
+
+.today {
+  color: #00ffb3;
+  font-size: 25px;
+}
+
+.form-wrap .form-floating {
+  position: relative;
+  margin-bottom: 15px;
+  font-family: 'Poppins Rounded Rounded';
+}
+
+.form-wrap .form-floating .form-control {
+  height: 60px !important;
+  color: #fff;
+  border-radius: 13px !important;
+  background-color: #1b00437c;
+  border-color: #0000;
+  font-weight: 200;
+}
+
+
+.form-wrap .form-floating .form-control:active, .form-wrap .form-floating .form-control:focus {
+  outline: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  border-color: #00ffb3;
+}
+
+.form-wrap .password-show-toggle, .conpassword-show-toggle{
+  cursor: pointer;
+  position: absolute;
+  right: 20px;
+  top: 15px;
+  z-index: 9;
+}
+
+
+
+.form-wrap .form-check {
+  margin-bottom: 30px;
+}
+
+.form-wrap .form-check .form-check-input {
+  border-color: #ffffff !important;
+}
+
+.form-wrap .form-check .form-check-input:checked {
+  background-color: #00ffb3;
+  border-color: #00ffb3 !important;
+  outline: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.form-wrap .form-check .form-check-input:focus, .form-wrap .form-check .form-check-input:active {
+  outline: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.form-wrap .btn-primary {
+  border-radius: 13px;
+  background-color: #00ffb3;
+  border-color: #00ffb3;
+  color: #000000;
+  height: 60px;
+  font-weight: 500;
+  -webkit-box-shadow: 0 15px 30px -7px rgba(84, 246, 173, 0.5);
+          box-shadow: 0 15px 30px -7px rgba(84, 246, 173, 0.5);
+  -webkit-transition: .3s all ease;
+  transition: .3s all ease;
+  font-size: 17px;
+}
+
+.form-wrap .btn-primary:hover {
+  background-color: #00ffb3;
+  border-color: #00ffb3;
+}
+
