@@ -111,6 +111,7 @@ a:hover {
 .today {
   color: #00ffb3;
   font-size: 25px;
+  bottom: 0%;
 }
 
 .form-wrap .form-floating {
@@ -141,14 +142,14 @@ a:hover {
   cursor: pointer;
   position: absolute;
   right: 20px;
-  top: 15px;
+  top: 20px;
   z-index: 9;
 }
 
 .password-show-toggle, .conpassword-show-toggle {
   font-family: 'Poppins', sans-serif;
   font-size: 12px;
-  font-weight: 200;
+  font-weight: 350;
 }
 
 
