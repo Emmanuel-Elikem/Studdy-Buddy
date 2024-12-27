@@ -25,22 +25,42 @@ a:hover {
   color: #00ffb3;
 }
 
+/* Common styles */
 .bg-img,
 .form-wrap {
-  height: 100vh;
-  min-height: 500px;
+  height: auto; /* Dynamic height */
+  min-height: 10px; /* Minimum height */
 }
 
 .bg-img {
-  left: 0;
+  position: relative; /* Ensure positioning works */
+  left: 0; /* Keeps it aligned at the left */
+  width: 75%; /* Adjust based on your design */
+  height: auto;
+  z-index: 1; /* Lower stack order */
+  
+  display: flex; /* Enable Flexbox */
+  align-items: center; /* Center vertically */
+  justify-content: center; /* Center horizontally */
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
-  width: 100%;
+}
+
+.bg-img svg {
+  width: 100%; /* Fill container */
+  height: 500%; /* Fill vertically */
+  object-fit: cover; /* Proportional scaling */
+}
+
+.form-wrap {
+  right: 0;
   position: relative;
-  height: 200px;
-  min-height: 200px;
   z-index: 2;
+  padding: 5%;
+  padding-top: 0%;
+  width: 100%;
+  background: #100124;
 }
 
 @media (min-width: 768px) {
@@ -49,13 +69,21 @@ a:hover {
     width: 50%;
     height: 100vh;
   }
+
+  .form-wrap {
+    position: absolute;
+    width: 50%;
+  }
 }
 
 @media (min-width: 992px) {
-  .bg-img {
+  .form-wrap {
     position: fixed;
+    top: 0;
+    right: 0;
     width: 50%;
     height: 100vh;
+    overflow-y: auto;
   }
 }
 
@@ -65,41 +93,15 @@ a:hover {
     width: 60%;
     height: 100vh;
   }
-}
 
-.form-wrap {
-  right: 0;
-  position: relative;
-  z-index: 1;
-  padding: 5%;
-  width: 100%;
-  background: #100124;
-  height: 100%;
-}
-
-@media (min-width: 768px) {
   .form-wrap {
-    position: absolute;
-    width: 50%;
-  }
-}
-
-@media (min-width: 992px) {
-  .form-wrap {
-    position: absolute;
-    width: 50%;
-  }
-}
-
-@media (min-width: 1200px) {
-  .form-wrap {
-    position: absolute;
     width: 40%;
   }
 }
 
+
 .form-wrap .title {
-  font-size: 25px;
+  font-size: 24px;
   color: rgb(240, 255, 240);
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
   filter: blur(0.2px);
@@ -113,6 +115,7 @@ a:hover {
 
 .form-wrap .form-floating {
   position: relative;
+  margin-top: 0%;
   margin-bottom: 15px;
   font-family: 'Poppins Rounded Rounded';
 }
