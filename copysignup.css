@@ -102,7 +102,7 @@ a:hover {
 
 .form-wrap .title {
   font-size: 24px;
-  color: rgb(240, 255, 240);
+  color: rgb(255, 255, 255);
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
   filter: blur(0.2px);
   font-family: 'Poppins Rounded Rounded';
@@ -145,6 +145,11 @@ a:hover {
   z-index: 9;
 }
 
+.password-show-toggle, .conpassword-show-toggle {
+  font-family: 'Poppins', sans-serif;
+  font-size: 12px;
+  font-weight: 200;
+}
 
 
 .form-wrap .form-check {
