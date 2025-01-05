@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rounded Popup Box</title>
+    <style>
+        
+/* ===== Google Font Import - Poppins ===== */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap');
+
+@font-face {
+  font-family: 'Poppins Rounded Rounded';
+  src: url('fonts/PoppinsRounded-Rounded.ttf');
+}
+        /* Overlay container for the popup */
+        .popup-container {
+            font-family: 'Poppins', sans-sarif;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: none; /* Initially hidden */
+            justify-content: center;
+            align-items: center;
+            background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+            animation: fadeIn 0.3s ease-in-out;
+        }
+
+        /* Main popup box with rounded edges */
+        .popup-box {
+            background-color: #100124; /* Purple background for the popup */
+            color: white;
+            border-radius: 20px; /* Rounded edges */
+            padding: 20px; /* Space around the content */
+            text-align: center; /* Center align the text */
+            animation: popIn 0.3s ease-in-out; /* Pop-in animation */
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); /* Subtle shadow for depth */
+            transform: scale(0); /* Initially hidden */
+            max-width: 300px; /* Maximum width of the popup */
+            width: 100%; /* Make it responsive */
+        }
+
+        /* Active popup animation state */
+        .popup-box.active {
+            transform: scale(1); /* Scale up to full size */
+        }
+
+        /* Background blur effect for the main content */
+        .blur {
+            filter: blur(8px); /* Apply blur effect */
+            transform: scale(1.02); /* Slight zoom effect */
+        }
+
+        /* Popup animations */
+        @keyframes popIn {
+            0% {
+                transform: scale(0.5); /* Start small */
+                opacity: 0; /* Fully transparent */
+            }
+            100% {
+                transform: scale(1); /* Full size */
+                opacity: 1; /* Fully visible */
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                background: rgba(0, 0, 0, 0); /* Transparent */
+            }
+            to {
+                background: rgba(0, 0, 0, 0.5); /* Semi-transparent */
+            }
+        }
+
+        /* Popup image styling */
+        .popup-box img {
+  display: block; /* Removes inline spacing */
+  width: 90%; /* Ensures the image fits nicely */
+  margin: 0; /* Remove margin */
+  position: relative;
+  top: -40px; /* Moves the image upwards */
+  margin-left: 12px;
+}
+
+
+        /* Main title styling */
+        .popup-box p {
+            margin: 0; /* Remove default margin */
+            font-size: 1rem; /* Larger font size */
+            margin-top: -55px;
+            margin-bottom: 5px;
+        }
+
+        /* continue button styling */
+        .popup-box .continue-btn {
+            font-family: 'poppins rounded rounded';
+            padding: 6px 5px; /* Button padding */
+            width: 80%;
+            font-size: 1rem; /* Button text size */
+            border: 2px solid #00ffb3;
+            border-radius: 15px; /* Rounded button edges */
+            background-color: #100124; /* White background */
+            color: #ffffff; /* Purple text color */
+            cursor: pointer; /* Pointer cursor */
+            transition: background-color 0.3s ease; /* Smooth hover effect */
+        }
+
+        /* Hover effect for the continue button */
+        .popup-box .continue-btn:hover {
+            background-color: #00ffb37d; /* Light grey background on hover */
+        }
+    </style>
+</head>
+<body>
+    <!-- Trigger button to open the popup -->
+    <button class="trigger-btn">Click Me</button>
+
+    <!-- Main content that will blur when the popup is active -->
+    <div class="content">
+        <p>This is some background content. It will become blurry when the pop-up appears.</p>
+    </div>
+
+    <!-- Popup container -->
+    <div class="popup-container">
+        <!-- Popup box with content -->
+        <div class="popup-box">
+            <img src="Confirmed-bro.svg" alt="Popup Image">
+            <p><b>Sign Up successful!</b> Join us today and start exploring amazing features.</p>
+            <button class="continue-btn">Continue</button>
+        </div>
+    </div>
+
+    <script>
+        // Select elements
+        const triggerBtn = document.querySelector('.trigger-btn');
+        const popupContainer = document.querySelector('.popup-container');
+        const popupBox = document.querySelector('.popup-box');
+        const content = document.querySelector('.content');
+
+        // Show the popup when the button is clicked
+        triggerBtn.addEventListener('click', () => {
+            popupContainer.style.display = 'flex'; // Show the container
+            popupBox.classList.add('active'); // Trigger pop-up animation
+            content.classList.add('blur'); // Add blur effect to the background
+        });
+
+        // Hide the popup when clicking outside the box
+        popupContainer.addEventListener('click', (e) => {
+            if (e.target === popupContainer) { // Check if clicked outside the popup
+                popupBox.classList.remove('active'); // Remove pop-up animation
+                content.classList.remove('blur'); // Remove blur effect
+                setTimeout(() => {
+                    popupContainer.style.display = 'none'; // Hide container after animation
+                }, 300); // Match animation duration
+            }
+        });
+    </script>
+</body>
+</html>

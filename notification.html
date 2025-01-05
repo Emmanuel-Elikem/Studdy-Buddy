@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Popup Notification</title>
+    <style>
+        /* Retaining your existing styles */
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap');
+
+        .popup-container {
+            font-family: 'Poppins', sans-serif;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: none; /* Initially hidden */
+            justify-content: center;
+            align-items: center;
+            background: rgba(0, 0, 0, 0.5);
+        }
+
+        .popup-box {
+            background-color: #100124;
+            color: white;
+            border-radius: 20px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+            transform: scale(0);
+            max-width: 300px;
+            width: 100%;
+        }
+
+        .popup-box.active {
+            transform: scale(1);
+        }
+
+        .blur {
+            filter: blur(8px);
+            transform: scale(1.02);
+        }
+
+        .popup-box img {
+            display: block;
+            width: 90%;
+            margin: 0 auto -40px;
+        }
+
+        .popup-box p {
+            margin: 0;
+            font-size: 1rem;
+            margin-top: -55px;
+        }
+
+        .popup-box .continue-btn {
+            padding: 6px 5px;
+            width: 80%;
+            font-size: 1rem;
+            border: 2px solid #00ffb3;
+            border-radius: 15px;
+            background-color: #100124;
+            color: #ffffff;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .popup-box .continue-btn:hover {
+            background-color: #00ffb37d;
+        }
+    </style>
+</head>
+<body>
+    <!-- Trigger buttons for testing -->
+    <button onclick="showNotification('Confirmed-bro.svg', 'Sign Up Successful!', 'Explore Now')">Show Signup Notification</button>
+    <button onclick="showNotification('img2.svg', 'Incorrect Password!', 'Try Again')">Show Error Notification</button>
+
+    <!-- Background content -->
+    <div class="content">
+        <p>This is some background content. It will become blurry when the pop-up appears.</p>
+    </div>
+
+    <!-- Popup notification template -->
+    <div class="popup-container" id="popupContainer">
+        <div class="popup-box">
+            <img id="popupImage" src="" alt="Popup Image">
+            <p id="popupText"></p>
+            <button id="popupButton" class="continue-btn"></button>
+        </div>
+    </div>
+
+    <script>
+        const popupContainer = document.getElementById('popupContainer');
+        const popupImage = document.getElementById('popupImage');
+        const popupText = document.getElementById('popupText');
+        const popupButton = document.getElementById('popupButton');
+        const content = document.querySelector('.content');
+
+        // Function to show a notification
+        function showNotification(imageSrc, message, buttonText) {
+            popupImage.src = imageSrc;
+            popupText.textContent = message;
+            popupButton.textContent = buttonText;
+
+            popupContainer.style.display = 'flex';
+            content.classList.add('blur');
+
+            popupContainer.addEventListener('click', (e) => {
+                if (e.target === popupContainer) hideNotification();
+            });
+
+            popupButton.onclick = hideNotification; // Dismiss on button click
+        }
+
+        // Function to hide the notification
+        function hideNotification() {
+            popupContainer.style.display = 'none';
+            content.classList.remove('blur');
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,373 @@
+
+/* ===== Google Font Import - Poppins ===== */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap');
+
+@font-face {
+  font-family: 'Poppins Rounded Rounded';
+  src: url('fonts/PoppinsRounded-Rounded.ttf');
+}
+
+body {
+  background-color: #100124;
+  font-family: 'Poppins', sans-serif;
+  color: rgb(246, 255, 246);
+  font-size: 15px;
+}
+
+a {
+  -webkit-transition: .3s all ease;
+  transition: .3s all ease;
+  color: #00ffb3;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #00ffb3;
+}
+
+/* Common styles */
+.bg-img,
+.form-wrap {
+  height: auto; /* Dynamic height */
+  min-height: 10px; /* Minimum height */
+}
+
+.bg-img {
+  position: relative; /* Ensure positioning works */
+  left: 0; /* Keeps it aligned at the left */
+  width: 75%; /* Adjust based on your design */
+  height: auto;
+  z-index: 1; /* Lower stack order */
+  
+  display: flex; /* Enable Flexbox */
+  align-items: center; /* Center vertically */
+  justify-content: center; /* Center horizontally */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.bg-img svg {
+  width: 100%; /* Fill container */
+  height: 500%; /* Fill vertically */
+  object-fit: cover; /* Proportional scaling */
+}
+
+.form-wrap {
+  right: 0;
+  position: relative;
+  z-index: 2;
+  padding: 5%;
+  padding-top: 0%;
+  width: 100%;
+  background: #100124;
+}
+
+@media (min-width: 768px) {
+  .bg-img {
+    position: fixed;
+    width: 50%;
+    height: 100vh;
+  }
+
+  .form-wrap {
+    position: absolute;
+    width: 50%;
+  }
+}
+
+@media (min-width: 992px) {
+  .form-wrap {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 50%;
+    height: 100vh;
+    overflow-y: auto;
+  }
+}
+
+@media (min-width: 1200px) {
+  .bg-img {
+    position: fixed;
+    width: 60%;
+    height: 100vh;
+  }
+
+  .form-wrap {
+    width: 40%;
+  }
+}
+
+
+.form-wrap .title {
+  font-size: 24px;
+  color: rgb(255, 255, 255);
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
+  filter: blur(0.2px);
+  font-family: 'Poppins Rounded Rounded';
+}
+
+.today {
+  color: #00ffb3;
+  font-size: 25px;
+  bottom: 0%;
+}
+
+.form-wrap .form-floating {
+  position: relative;
+  margin-top: 0%;
+  margin-bottom: 15px;
+  font-family: 'Poppins Rounded Rounded';
+}
+
+.form-wrap .form-floating .form-control {
+  height: 60px !important;
+  color: #fff;
+  border-radius: 13px !important;
+  background-color: #1b00437c;
+  border-color: #0000;
+  font-weight: 200;
+}
+
+
+.form-wrap .form-floating .form-control:active, .form-wrap .form-floating .form-control:focus {
+  outline: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  border-color: #00ffb3;
+}
+
+.form-wrap .password-show-toggle, .conpassword-show-toggle{
+  cursor: pointer;
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  z-index: 9;
+}
+
+.password-show-toggle, .conpassword-show-toggle {
+  font-family: 'Poppins', sans-serif;
+  font-size: 12px;
+  font-weight: 350;
+}
+
+
+.form-wrap .form-check {
+  margin-bottom: 30px;
+}
+
+.form-wrap .form-check .form-check-input {
+  border-color: #ffffff !important;
+}
+
+.form-wrap .form-check .form-check-input:checked {
+  background-color: #00ffb3;
+  border-color: #00ffb3 !important;
+  outline: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.form-wrap .form-check .form-check-input:focus, .form-wrap .form-check .form-check-input:active {
+  outline: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.form-wrap .btn-primary {
+  border-radius: 13px;
+  background-color: #00ffb3;
+  border-color: #00ffb3;
+  color: #000000;
+  height: 60px;
+  font-weight: 500;
+  -webkit-box-shadow: 0 15px 30px -7px rgba(84, 246, 173, 0.5);
+          box-shadow: 0 15px 30px -7px rgba(84, 246, 173, 0.5);
+  -webkit-transition: .3s all ease;
+  transition: .3s all ease;
+  font-size: 17px;
+}
+
+.form-wrap .btn-primary:hover {
+  background-color: #00ffb3;
+  border-color: #00ffb3;
+}
+
+/* Search bar container */
+.search-container {
+  display: flex;
+  align-items: center; /* Align items vertically at the center */
+  justify-content: center; /* Center the content horizontally */
+  margin-bottom: 20px; /* Space below the search bar */
+  width: 100%;
+  padding: 0 20px; /* Add padding for a cleaner look */
+  gap: 10px; /* Add space between the search bar and the plus icon */
+}
+
+/* Search bar styles */
+.search-bar {
+  display: flex;
+  align-items: center;
+  background-color: #1b00437c; /* Semi-transparent background */
+  border: 2px solid transparent; /* Default border is transparent */
+  border-radius: 25px; /* Rounded edges */
+  width: 100%;
+  max-width: 600px; /* Limit max width */
+  padding: 5px 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  transition: border-color 0.3s ease; /* Smooth transition for the border */
+}
+
+/* Input field styles */
+.search-input {
+  color: #ffffff;
+  background-color: #1b00437c; /* Match the background of the search bar */
+  border: none;
+  outline: none;
+  flex: 1; /* Allow input to grow and fill available space */
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 25px; /* Ensures it matches the container */
+}
+
+.search-input::placeholder {
+  color: #d6fff3b9; /* Placeholder text color */
+}
+
+/* Search button styles */
+.search-btn {
+  background: none;
+  border: none;
+  color: #ffffff; /* Icon color */
+  cursor: pointer;
+  font-size: 18px;
+  padding: 0 10px;
+}
+
+/* Highlight border when the input is focused */
+.search-bar:focus-within {
+  border-color: #00ffb3; /* Green border when the input is focused */
+}
+
+/* Plus button styles */
+.plus-btn {
+  background-color: #100124;
+  color: #00ffb3;
+  margin-left: 10px;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 50px;
+  transition: transform 0.2s ease;
+}
+
+.plus-btn:hover {
+  transform: scale(1.1); /* Slight zoom effect */
+}
+
+        /* Overlay container for the popup */
+        .popup-container {
+          font-family: 'Poppins', sans-sarif;
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          display: none; /* Initially hidden */
+          justify-content: center;
+          align-items: center;
+          background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+          animation: fadeIn 0.3s ease-in-out;
+      }
+
+      /* Main popup box with rounded edges */
+      .popup-box {
+          background-color: #100124; /* Purple background for the popup */
+          color: white;
+          border-radius: 20px; /* Rounded edges */
+          padding: 20px; /* Space around the content */
+          text-align: center; /* Center align the text */
+          animation: popIn 0.3s ease-in-out; /* Pop-in animation */
+          box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); /* Subtle shadow for depth */
+          transform: scale(0); /* Initially hidden */
+          max-width: 300px; /* Maximum width of the popup */
+          width: 100%; /* Make it responsive */
+      }
+
+      /* Active popup animation state */
+      .popup-box.active {
+          transform: scale(1); /* Scale up to full size */
+      }
+
+      /* Background blur effect for the main content */
+      .blur {
+          filter: blur(8px); /* Apply blur effect */
+          transform: scale(1.02); /* Slight zoom effect */
+      }
+
+      /* Popup animations */
+      @keyframes popIn {
+          0% {
+              transform: scale(0.5); /* Start small */
+              opacity: 0; /* Fully transparent */
+          }
+          100% {
+              transform: scale(1); /* Full size */
+              opacity: 1; /* Fully visible */
+          }
+      }
+
+      @keyframes fadeIn {
+          from {
+              background: rgba(0, 0, 0, 0); /* Transparent */
+          }
+          to {
+              background: rgba(0, 0, 0, 0.5); /* Semi-transparent */
+          }
+      }
+
+      /* Popup image styling */
+      .popup-box img {
+display: block; /* Removes inline spacing */
+width: 90%; /* Ensures the image fits nicely */
+margin: 0; /* Remove margin */
+position: relative;
+top: -40px; /* Moves the image upwards */
+margin-left: 12px;
+}
+
+
+      /* Main title styling */
+      .popup-box p {
+          margin: 0; /* Remove default margin */
+          font-size: 1rem; /* Larger font size */
+          margin-top: -55px;
+          margin-bottom: 5px;
+      }
+
+      /* continue button styling */
+      .popup-box .continue-btn {
+          font-family: 'poppins rounded rounded';
+          padding: 6px 5px; /* Button padding */
+          width: 80%;
+          font-size: 1rem; /* Button text size */
+          border: 2px solid #00ffb3;
+          border-radius: 15px; /* Rounded button edges */
+          background-color: #100124; /* White background */
+          color: #ffffff; /* Purple text color */
+          cursor: pointer; /* Pointer cursor */
+          transition: background-color 0.3s ease; /* Smooth hover effect */
+      }
+
+      /* Hover effect for the continue button */
+      .popup-box .continue-btn:hover {
+          background-color: #00ffb37d; /* Light grey background on hover */
+      }
+
+
