@@ -56,6 +56,7 @@
     </form>
 
     <!-- Popup container -->
+    <form action="home.html">
     <div class="popup-container" style="display: none;">
         <div class="popup-box">
             <img src="Confirmed-bro.svg" alt="Popup Image">
@@ -63,6 +64,7 @@
             <button class="continue-btn" onclick="closePopup()">Continue</button>
         </div>
     </div>
+</form>
 
     <script>
         // Function to toggle password visibility
@@ -100,7 +102,7 @@
                 popupContainer.style.display = 'none';
             }, 300);
         }
-        
+
         // Hide the popup when clicking outside the box
         popupContainer.addEventListener('click', (e) => {
             if (e.target === popupContainer) { // Check if clicked outside the popup
