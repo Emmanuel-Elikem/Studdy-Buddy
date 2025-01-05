@@ -1,4 +1,4 @@
-const input = document.querySelector("input");
+const input = document.querySelector(".todo-input");
 const addButton = document.querySelector(".add-button");
 const todosHtml = document.querySelector(".todos");
 const emptyImage = document.querySelector(".empty-image");

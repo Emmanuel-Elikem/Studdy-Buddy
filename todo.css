@@ -27,7 +27,7 @@ body {
 }
 
 h4 {
-  font-family: 'Poppins Rounded Rounded';
+  font-family: 'Poppins Rounded Rounded', sans-serif;
   color: white;
   text-align: center;
   margin-bottom: 10px;
@@ -36,8 +36,10 @@ h4 {
 .input-container {
   display: flex;
   justify-content: space-between;
+  gap: 10px;
   margin-bottom: 10px;
-  height: 35px;
+  height: 40px; /* Adjust height */
+  width: 100%; /* Ensure it doesn't exceed container width */
 }
 
 .todo-input {
@@ -65,7 +67,6 @@ h4 {
   border-radius: 40px;
   width: 40px;
   height: 40px;
-  margin-left: 0px;
 }
 
 .filters {
@@ -90,20 +91,20 @@ h4 {
 
 .filter.active, 
 .filter:hover {
-  background-color: #00ffb37d;;
+  background-color: #00ffb37d;
 }
 
 .delete-all {
-display: flex;
-color: #eee;
-padding: 6px 15px;
-cursor: pointer;
-transition: all 0.2s ease;
+  display: flex;
+  color: #eee;
+  padding: 6px 15px;
+  cursor: pointer;
+  transition: all 0.2s ease;
 }
 
 .delete-all:hover {
-border-radius: 5px;
-background-color: none;
+  border-radius: 5px;
+  background-color: none;
 }
 
 .todos-container {
@@ -195,4 +196,54 @@ input:checked + span::before {
   max-width: 150px;
   margin-left: auto;
   margin-right: auto;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+  .container {
+    max-width: 100%;
+    padding: 15px;
+  }
+
+  .input-container {
+    gap: 5px;
+  }
+
+  .filters {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 5px;
+  }
+
+  .filter {
+    font-size: 14px;
+    padding: 2px 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .input-container {
+    flex-direction: column;
+    gap: 10px;
+    height: auto;
+  }
+
+  .todo-input {
+    width: 100%;
+  }
+
+  .add-button {
+    width: 100%;
+    font-size: 20px;
+  }
+
+  .filters {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .filter {
+    width: 100%;
+    text-align: center;
+  }
 }
